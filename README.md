@@ -1,1 +1,1 @@
-THis contains task to master project autonomy
+Next.js Project Setup and Basics
