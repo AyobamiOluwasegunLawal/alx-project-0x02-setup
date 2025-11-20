@@ -1,3 +1,4 @@
-interface HeaderProps {
+interface CardProps {
     title: string;
+    content: string;
 }
