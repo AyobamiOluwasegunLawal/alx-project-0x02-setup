@@ -1,11 +1,21 @@
 import Card from "@/components/common/Card";
-import React, { ReactNode } from "react";
+import PostModal from "@/components/common/PostModal";
+import React from "react";
 
-const Home: React.FC<ReactNode> = () => {
+const Home: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
   return (
     <>
       <h1>This is the home page</h1>
-      <Card title="Card-one" content="This is the content of card one." />
+      <Card title={"Card one"} content={"card two"} />
+
+      <button onClick={handleModalOpen}>Open Modal</button>
+
+      {isModalOpen && <PostModal />}
     </>
   );
 };
