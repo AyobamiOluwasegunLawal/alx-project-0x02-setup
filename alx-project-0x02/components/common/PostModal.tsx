@@ -1,15 +1,22 @@
-import { CardProps } from "@/interfaces";
-import React, { ReactNode } from "react";
+import { PostModalProps, PostType } from "@/interfaces";
+import React from "react";
 
-const PostModal: React.FC = () => {
-  const [formData, setFormData] = React.useState<CardProps>({
+const PostModal: React.FC<PostModalProps> = ({ isOpen, addPost, onClose }) => {
+  const [formData, setFormData] = React.useState<PostType>({
     title: "",
     content: "",
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+
+    if (!formData.title && !formData.content) return;
+    addPost(formData);
+
+    setFormData({
+      title: "",
+      content: "",
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +26,9 @@ const PostModal: React.FC = () => {
       [name]: value,
     });
   };
+
+  if (!isOpen) return null;
+
   return (
     <form onClick={handleSubmit}>
       <div>
@@ -46,6 +56,9 @@ const PostModal: React.FC = () => {
       </div>
 
       <button type="submit">Submit</button>
+      <button type="submit" onClick={onClose}>
+        Cancel
+      </button>
     </form>
   );
 };
