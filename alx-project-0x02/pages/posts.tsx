@@ -4,7 +4,6 @@ import { JsonApiResponse, PostProps, PostsPageProps } from "@/interfaces";
 import React from "react";
 
 const Posts: React.FC<PostsPageProps> = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
       <Header />
