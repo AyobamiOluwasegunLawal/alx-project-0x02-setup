@@ -1,5 +1,6 @@
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Header from "@/components/layout/Header";
 import { PostType } from "@/interfaces";
 import React from "react";
 
@@ -21,6 +22,7 @@ const Index: React.FC = () => {
 
   return (
     <>
+      <Header />
       <h1>This is the home page</h1>
       <Card title={"Card one"} content={"card content"} />
 
