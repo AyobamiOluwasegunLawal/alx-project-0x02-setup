@@ -20,3 +20,20 @@ export interface ButtonProps {
   styles: string;
   onclick?: () => void;
 }
+
+export interface PostProps {
+  title: string;
+  userId: number;
+  content: string;
+}
+
+export interface PostsPageProps {
+  posts: PostProps[];
+}
+
+export interface JsonApiResponse {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+}
