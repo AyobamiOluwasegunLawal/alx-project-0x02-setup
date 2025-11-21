@@ -1,9 +1,12 @@
-import React from 'react'
+import Header from "@/components/layout/Header";
+import React from "react";
 
 const Posts: React.FC = () => {
   return (
-    <div>posts</div>
-  )
-}
+    <div>
+      <Header />
+    </div>
+  );
+};
 
-export default Posts
+export default Posts;
