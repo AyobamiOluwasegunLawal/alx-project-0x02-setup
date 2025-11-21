@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div>
-      Welcome to alx project!
+      <h1>Hello world</h1>
     </div>
   );
 }
